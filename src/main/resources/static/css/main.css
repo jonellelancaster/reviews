@@ -1,0 +1,26 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background: var(--crm);
+
+
+}
+
+html{
+--drk-pink: #af3e4d;
+--dust-pink: #e8dbc5;
+--crm: #fae5d1;
+--mav: #aa968a;
+--vlt: #42253b;
+color: var(--drk-pink);
+font: 20px/1 "Comic Sans MS";
+
+
+}
+
+
+h1{
+    color: var(--drk-pink);
+    background: var(--dust-pink);
+}

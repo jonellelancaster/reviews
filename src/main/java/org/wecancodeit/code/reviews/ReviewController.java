@@ -5,6 +5,7 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class ReviewController {
@@ -19,7 +20,8 @@ public class ReviewController {
 	}
 
 	@GetMapping("/show-review")
-	public String findReview(Model model) {
+	public String findReview(@RequestParam Long id, Model model) {
+		model.addAttribute("reviewModel", reviewRepo.findOneReview(id));
 		return "review-template";
 
 	}

@@ -3,23 +3,24 @@
 
 <head>
     <title>Daycare Reviews</title>
+    <link rel="stylesheet" href="/css/main.css" />
 </head>
 
 <body>
 
-    <header>
+    <header class="main-header">
         <h1>Eastern Columbus Daycare Reviews</h1>
     </header>
 
     <main>
         <ul>
-            <li th:each="review: ${reviewsModel}"><a th:href="@{/show-reviews(id=${review.id})}"
+            <li th:each="review: ${reviewsModel}"><a th:href="@{/show-review(id=${review.id})}"
                     th:text="${review.name}"></a></li>
         </ul>
     </main>
 
     <footer>
-        <small>& copy WCCI 2019</small>
+        <small>&copy Jonelle's Reviews</small>
     </footer>
 
 </body>

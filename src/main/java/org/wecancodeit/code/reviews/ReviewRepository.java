@@ -10,8 +10,8 @@ import org.springframework.stereotype.Repository;
 public class ReviewRepository {
 
 	private Map<Long, Review> reviewList = new HashMap<>();
-	private Review reviewOne = new Review(1L, "reviewOne", "image", "catagory", "content");
-	private Review reviewTwo = new Review(2L, "reviewTwo", "image", "catagory", "content");
+	private Review reviewOne = new Review(1L, "The Premier School: Pickerington", "/images/tps.png", "Infant-K & AfterSchool", "content");
+	private Review reviewTwo = new Review(2L, "La Petit Academy: Pickerington", "/images/lpa.bmp", "Infant-K & AfterSchool", "content");
 
 	public ReviewRepository() {
 		reviewList.put(reviewOne.getId(), reviewOne);
