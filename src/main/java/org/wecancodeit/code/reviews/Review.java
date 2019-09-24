@@ -3,6 +3,7 @@ package org.wecancodeit.code.reviews;
 public class Review {
 
 	private Long id;
+
 	private String name;
 	private String imageUrl;
 	private String catagory;
@@ -25,10 +26,10 @@ public class Review {
 	public String getContent() {
 		return content;
 	}
-
 	public Long getId() {
 		return id;
 	}
+
 
 	public Review(long id, String name, String imageUrl, String catagory, String content) {
 		this.id = id;
@@ -39,3 +40,4 @@ public class Review {
 
 }
 	}
+
