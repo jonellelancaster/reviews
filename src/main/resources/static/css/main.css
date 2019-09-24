@@ -9,18 +9,34 @@
 
 html{
 --drk-pink: #af3e4d;
+--dar-vlt: #351355;
 --dust-pink: #e8dbc5;
---crm: #fae5d1;
+--crm: #fcf9f6;
 --mav: #aa968a;
---vlt: #42253b;
+--vlt: #bb71aa;
 color: var(--drk-pink);
-font: 20px/1 "Comic Sans MS";
+font: 20px/1 "Palatino Linotype";
 
 
 }
-
-
-h1{
-    color: var(--drk-pink);
-    background: var(--dust-pink);
+a{
+    color: var(--vlt);
 }
+a:hover{
+    color: var(--mav);
+
+}
+.main-header{
+    color: var(--dar-vlt);
+}
+.main-content{
+    padding: 5rem, 10rem;
+    margin: 1rem; 
+}
+
+
+li{
+padding: 1rem;
+
+}
+

@@ -1,6 +1,7 @@
 package org.wecancodeit.code.reviews;
 
 import static org.hamcrest.Matchers.hasSize;
+import static org.hamcrest.Matchers.is;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
@@ -39,7 +40,8 @@ public class ReviewControllerMockMvcTest {
 	}
 	@Test
 	public void shouldGetStatusOfOkWhenNavigatingToSingleReview() throws Exception{
-		this.mockMvc.perform(get("/show-review")).andExpect(status().isOk())
+		when(reviewRepo.findOneReview(1L)).thenReturn(reviewOne);
+		this.mockMvc.perform(get("/show-review?id=1")).andExpect(status().isOk())
 		.andExpect(view().name("review-template"));
 	
 }
@@ -48,5 +50,15 @@ public class ReviewControllerMockMvcTest {
 		when(reviewRepo.findAllReviews()).thenReturn(Arrays.asList(reviewOne,reviewTwo));
 		this.mockMvc.perform(get("/show-reviews"))
 		.andExpect(model().attribute("reviewsModel", hasSize(2)));
+	}
+	@Test
+	public void shouldAddSingleReviewToTheModel() throws Exception{
+		when(reviewRepo.findOneReview(1L)).thenReturn(reviewOne);
+		this.mockMvc.perform(get("/show-review?id=1"))
+		.andExpect(model().attribute("reviewModel", is(reviewOne)));
+	
+	
+	
+	
 	}
 }
