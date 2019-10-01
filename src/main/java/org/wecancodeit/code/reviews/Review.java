@@ -1,9 +1,18 @@
 package org.wecancodeit.code.reviews;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Review {
 
+	
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-
 	private String name;
 	private String imageUrl;
 	private String catagory;
@@ -25,19 +34,26 @@ public class Review {
 
 	public String getContent() {
 		return content;
+	
 	}
-	public Long getId() {
-		return id;
-	}
+	protected Review() {}
 
 
-	public Review(long id, String name, String imageUrl, String catagory, String content) {
-		this.id = id;
+	public Review(String name, String imageUrl, String catagory, String content) {
 		this.name = name;
 		this.imageUrl = imageUrl;
 		this.catagory = catagory;
 		this.content = content;
+		
+		
+		}
+
+	@Override
+	public String toString() {
+		return "Review [name=" + name + ", imageUrl=" + imageUrl + ", catagory=" + catagory + ", content=" + content
+				+ "]";
+	}
 
 }
-	}
+	
 

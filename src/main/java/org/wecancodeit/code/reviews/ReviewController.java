@@ -7,23 +7,29 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import org.wecancodeit.code.reviews.ReviewService;
 @Controller
 public class ReviewController {
 	
 	@Resource
-	private ReviewRepository reviewRepo;
+	private ReviewService reviewRepo;
 
 	@GetMapping("/show-reviews")
-	public String findAllReviews(Model model) {
-		model.addAttribute("reviewsModel", reviewRepo.findAllReviews());
+	public String showAllReviews(Model model) {
+		model.addAttribute("reviews", reviewRepo.getReviews());
 		return "reviews-template";
 	}
 
-	@GetMapping("/show-review")
-	public String findReview(@RequestParam Long id, Model model) {
-		model.addAttribute("reviewModel", reviewRepo.findOneReview(id));
-		return "review-template";
-
-	}
+//	@GetMapping("/show-review")
+//	public String findReview(@RequestParam Long id, Model model) {
+//		model.addAttribute("reviewModel", this.findOneReview(id));
+//		return "review-template";
+//
+//	}
+//
+//	private Object findOneReview(Long id) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
 
 }

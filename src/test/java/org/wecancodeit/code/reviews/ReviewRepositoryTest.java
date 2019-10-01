@@ -13,26 +13,26 @@ import org.junit.Test;
 public class ReviewRepositoryTest {
 
 @Resource
-private ReviewRepository underTest;
+private ReviewRepositoryOriginal underTest;
 
 private Review reviewOne= new Review(1L, "reviewtitle", "image", "catagory", "content");
 private Review reviewTwo= new Review(2L, "reviewtitle", "image", "catagory", "content");
 
 @Test
 public void shouldFindOneReviewbyId() {
-	underTest = new ReviewRepository(reviewOne);
+	underTest = new ReviewRepositoryOriginal(reviewOne);
 	Review foundReview =underTest.findOneReview(1L);
 	assertThat(foundReview, is(reviewOne));
 }
 @Test
 public void shouldFindReviewTwoById() {
-	underTest = new ReviewRepository(reviewTwo);
+	underTest = new ReviewRepositoryOriginal(reviewTwo);
 	Review foundReview =underTest.findOneReview(2L);
 	assertThat(foundReview, is(reviewTwo));
 }
 @Test
 public void shouldFindAllReviews() {
-	underTest=new ReviewRepository(reviewOne, reviewTwo);
+	underTest=new ReviewRepositoryOriginal(reviewOne, reviewTwo);
 	Collection<Review> foundReviews=underTest.findAllReviews();
 	assertThat(foundReviews, containsInAnyOrder(reviewOne, reviewTwo));
 }

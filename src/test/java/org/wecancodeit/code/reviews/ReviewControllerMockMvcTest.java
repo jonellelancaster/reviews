@@ -31,7 +31,7 @@ public class ReviewControllerMockMvcTest {
 	@Mock
 	private Review reviewTwo;
 	@MockBean
-	private ReviewRepository reviewRepo;
+	private ReviewRepositoryOriginal reviewRepo;
 	
 	@Test
 	public void shouldGetStatusOfOKWhenNavigatingToAllReviews() throws Exception {
